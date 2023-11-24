@@ -1,35 +1,37 @@
-<div class="custom-variant-picker" data-section-id="{{ section.id }}">
-    {% for option in product.options_with_vaues %}
+{% unless product.has_only_default_variant %}
+    <div class="custom-variant-picker" data-section-id="{{ section.id }}">
+        {% for option in product.options_with_vaues %}
 
-        {% comment %} In case variant is Color {% endcomment %}
+            {% comment %} In case variant is Color {% endcomment %}
 
-        {% if option.name == 'Color' %}
-            <div class="custom-variant-radio">
-                {% for value in option.values %}
-                    <input id="{{ option.name }}--{{ value }}" type="radio" name="option--{{ option.name }}" class="custom-variant-radio__inpute" value="{{ value }}">
-                    <label class="custom-variant-radio_label" for="{{ option.name }}--{{ value }}">
-                        {% for variant in product.variants %}
-                            {% if variant.title contains value %}
-                                {{ variant.featured_image | img_url: '40x' | img_tag }}
-                                {% break %}
-                            {% endif %}
-                        {% endfor %}
-                    </label>
-                {% endfor %}
-            </div>
+            {% if option.name == 'Color' %}
+                <div class="custom-variant-radio">
+                    {% for value in option.values %}
+                        <input id="{{ option.name }}--{{ value }}" type="radio" name="option--{{ option.name }}" class="custom-variant-radio__inpute" value="{{ value }}">
+                        <label class="custom-variant-radio_label" for="{{ option.name }}--{{ value }}">
+                            {% for variant in product.variants %}
+                                {% if variant.title contains value %}
+                                    {{ variant.featured_image | img_url: '40x' | img_tag }}
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                        </label>
+                    {% endfor %}
+                </div>
 
-            {% comment %} In case variant is Size {% endcomment %}
+                {% comment %} In case variant is Size {% endcomment %}
 
-        {% else %}
-            <select class="custom_variant_select" data-option-name="{{ option.name }}">
-                <option selected disabled>unselected</option>
-                {% for value in option.values  %}
-                    <option value="{{ value }}">{{ value }}</option>
-                {% endfor %}
-            </select>
-        {% endif %}
-    {% endfor %}
-    <script type="application/json">
-        {{ product.variants | json }}
-    </script>
-</div>
+            {% else %}
+                <select class="custom_variant_select" data-option-name="{{ option.name }}">
+                    <option selected disabled>unselected</option>
+                    {% for value in option.values  %}
+                        <option value="{{ value }}">{{ value }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+        {% endfor %}
+        <script type="application/json">
+            {{ product.variants | json }}
+        </script>
+    </div>
+{% endunless %}
