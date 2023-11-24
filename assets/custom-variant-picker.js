@@ -1,18 +1,18 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-console.log(variantData);
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
+    console.log(variantData);
 
     const variantTitle  = color + ' / ' + size;
     console.log(variantTitle);
 
     for( let i = 0; i < variantData.length; i++ ) {
         // console.log( variantData[i].title == variantTitle );
-        console.log(1);
+        // console.log(1);
         // if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
 
