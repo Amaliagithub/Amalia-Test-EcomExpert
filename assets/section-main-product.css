@@ -1625,3 +1625,7 @@ a.product__text {
   gap: 20px;
   align-items: center;
 }
+
+.custom_variant_select {
+  margin-top: 20px;
+}
