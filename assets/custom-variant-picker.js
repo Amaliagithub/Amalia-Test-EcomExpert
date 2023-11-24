@@ -3,10 +3,9 @@ var variantDate = JSON.parse(document.querySelector('.custom-variant-picker').qu
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
-console.log(document.querySelector('.custom-variant-radio__inpute'));
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
-    const color = document.querySelector('.custom-variant-radio__inpute:checked').value;
+    const color = document.querySelector('.custom-variant-radio__input:checked').value;
 
     const variantTitle  = color + '/' + size;
 
