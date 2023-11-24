@@ -1,6 +1,6 @@
 {% unless product.has_only_default_variant %}
     <div class="custom-variant-picker" data-section-id="{{ section.id }}">
-        {% for option in product.options_with_vaues %}
+        {% for option in product.options_with_values %}
             {{ option.name }}
             {% comment %} In case variant is Color {% endcomment %}
 
