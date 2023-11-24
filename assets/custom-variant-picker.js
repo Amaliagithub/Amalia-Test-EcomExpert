@@ -1,7 +1,8 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 var currentVariant;
-console.log(currentVariant);
+console.log(variantData);
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
+console.log(sectionId);
 
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
