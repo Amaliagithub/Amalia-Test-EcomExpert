@@ -1618,4 +1618,10 @@ a.product__text {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
+.custom-variant-radio{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
