@@ -1602,9 +1602,11 @@ a.product__text {
 .custom-variant-radio__input {
   display: none;
 }
+
 .custom-variant-radio__input:checked + .custom-variant-radio__label {
   background-color: #000;
 }
+
 .custom-variant-radio_label{
   position: relative;
   width: 80px;
@@ -1631,4 +1633,7 @@ a.product__text {
 
 .custom_variant_select {
   margin-top: 20px;
+}
+.product__media-list {
+  display: none
 }
