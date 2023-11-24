@@ -13,7 +13,7 @@ function changeVariant() {
         if( variantDate[i].title == variantTitle ) currentVariant = variantDate[i];
     }
 
-    console.log(size, color);
+    console.log(currentVariant);
     document.querySelector(`[data-target="${sectionId} - ${currentVariant.featured_media.id}"]`).querySelector('button').click();
     document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
     document.querySelector(".product-variant-id").value = currentVariant.id;
