@@ -1598,3 +1598,7 @@ a.product__text {
     border: none;
   }
 }
+
+.custom-variant-radio__input {
+  display: none;
+}
