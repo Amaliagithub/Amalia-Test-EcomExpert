@@ -1,5 +1,5 @@
-var variantDate = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-console.log(variantDate);
+var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
+console.log(variantData);
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
@@ -10,8 +10,8 @@ function changeVariant() {
     const variantTitle  = `"${color} / ${size}"`;
     console.log(variantTitle);
 
-    for( let i = 0; i < variantDate.length; i++ ) {
-        if( variantDate[i].title == variantTitle ) currentVariant = variantDate[i];
+    for( let i = 0; i < variantData.length; i++ ) {
+        if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
 
     console.log(currentVariant);
