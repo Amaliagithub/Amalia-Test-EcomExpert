@@ -1,13 +1,13 @@
 {% unless product.has_only_default_variant %}
     <div class="custom-variant-picker" data-section-id="{{ section.id }}">
         {% for option in product.options_with_values %}
-            
+
             {% comment %} In case variant is Color {% endcomment %}
 
             {% if option.name == 'Color' %}
                 <div class="custom-variant-radio">
                     {% for value in option.values %}
-                        <input id="{{ option.name }}--{{ value }}" type="radio" name="option--{{ option.name }}" class="custom-variant-radio__inpute" value="{{ value }}">
+                        <input id="{{ option.name }}--{{ value }}" type="radio" name="option--{{ option.name }}" class="custom-variant-radio__input" value="{{ value }}">
                         <label class="custom-variant-radio_label" for="{{ option.name }}--{{ value }}">
                             {% for variant in product.variants %}
                                 {% if variant.title contains value %}
