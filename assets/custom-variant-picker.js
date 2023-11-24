@@ -10,11 +10,14 @@ function changeVariant() {
     const variantTitle  = color + ' / ' + size;
     console.log(variantTitle);
 
-    for( let i = 0; i < 9; i++ ) {
-        // console.log( variantData[i].title == variantTitle );
-        console.log(2);
-        // if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
-    }
+    // for( let i = 0; i < 9; i++ ) {
+    //     // console.log( variantData[i].title == variantTitle );
+    //     console.log(2);
+    //     // if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
+    // }
+    variantData.forEach((item) => {
+        console.log(item);
+    })
 
     console.log(currentVariant);
     document.querySelector(`[data-target="${sectionId} - ${currentVariant.featured_media.id}"]`).querySelector('button').click();
