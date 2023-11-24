@@ -1,5 +1,6 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 var currentVariant;
+console.log(currentVariant);
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
 function changeVariant() {
@@ -15,8 +16,6 @@ function changeVariant() {
     //     console.log(1);
     // })
 
-    console.log(currentVariant);
-    console.log(document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`));
     document.querySelector(`[data-target="${sectionId}- ${currentVariant.featured_media.id}"]`).querySelector('button').click();
     document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
     document.querySelector(".product-variant-id").value = currentVariant.id;
