@@ -11,11 +11,7 @@ function changeVariant() {
     console.log(variantTitle);
 
     for( let i = 0; i < variantData.length; i++ ) {
-        // console.log( variantData[i].title == variantTitle );
-        // console.log(variantData[i]);
-        console.log(1);
-        console.log(2);
-        // if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
+        if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
     // variantData.forEach((item) => {
     //     console.log(1);
