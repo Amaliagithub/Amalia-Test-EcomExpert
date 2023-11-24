@@ -1634,3 +1634,6 @@ a.product__text {
 .custom_variant_select {
   margin-top: 20px;
 }
+.product__media-list:nth-child(2){
+  display:none;
+}
