@@ -29,4 +29,7 @@
             </select>
         {% endif %}
     {% endfor %}
+    <script type="application/json">
+        {{ product.variants | json }}
+    </script>
 </div>
