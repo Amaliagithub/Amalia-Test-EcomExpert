@@ -20,10 +20,8 @@ function changeVariant() {
 }
 
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
-    console.log('here');
     e.preventDefault();
     changeVariant();
-
 });
 
 document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
