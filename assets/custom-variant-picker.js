@@ -19,6 +19,7 @@ function changeVariant() {
 
 }
 
+console.log(document.querySelector('.custom-variant-select'));
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
     e.preventDefault();
     changeVariant();
