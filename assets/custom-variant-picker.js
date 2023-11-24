@@ -7,8 +7,8 @@ function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
 
-    const variantTitle  = size + '/' + color;
-
+    const variantTitle  = color + '/' + size;
+    console.log(variantDate);
     for( let i = 0; i < variantDate.length; i++ ) {
         if( variantDate[i].title == variantTitle ) currentVariant = variantDate[i];
     }
