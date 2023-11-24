@@ -1634,6 +1634,6 @@ a.product__text {
 .custom_variant_select {
   margin-top: 20px;
 }
-.thumbnail-slider{
-  display: none;
+.product-media-grid.scroll-trigger{
+  display: none;;
 }
