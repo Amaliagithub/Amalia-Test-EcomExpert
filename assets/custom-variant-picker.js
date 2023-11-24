@@ -1,5 +1,5 @@
 var variantDate = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-
+console.log(variantDate);
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
