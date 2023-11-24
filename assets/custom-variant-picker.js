@@ -16,7 +16,7 @@ function changeVariant() {
     // })
 
     console.log(currentVariant);
-    console.log(document.querySelector(`[data-target="${sectionId} - ${currentVariant.featured_media.id}"]`));
+    console.log(document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`));
     document.querySelector(`[data-target="${sectionId} - ${currentVariant.featured_media.id}"]`).querySelector('button').click();
     document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
     document.querySelector(".product-variant-id").value = currentVariant.id;
