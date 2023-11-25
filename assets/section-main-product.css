@@ -1634,3 +1634,6 @@ a.product__text {
 .custom-variant-select {
   margin-top: 20px;
 }
+.thumbnail-list{
+  display: none;
+}
