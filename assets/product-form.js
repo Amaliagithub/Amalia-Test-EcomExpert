@@ -4,7 +4,6 @@ if (!customElements.get('product-form')) {
     class ProductForm extends HTMLElement {
       constructor() {
         super();
-        console.log('here');
 
         this.form = this.querySelector('form');
         this.form.querySelector('[name=id]').disabled = false;
@@ -18,6 +17,7 @@ if (!customElements.get('product-form')) {
       }
 
       onSubmitHandler(evt) {
+        console.log('submit');
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
