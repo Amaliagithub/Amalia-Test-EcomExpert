@@ -53,9 +53,7 @@
       -%}
         {% if product.id == 7182744879156 %}
           <input type="hidden" name="items[0][id]" vaule="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id">
-          {% if product.id %}
           <input type="hidden" name="items[1][id]" value="41390951792692">
-          {% endif %}
         {% else %} 
           <input
             type="hidden"
