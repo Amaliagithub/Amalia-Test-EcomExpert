@@ -1603,7 +1603,7 @@ a.product__text {
   display: none;
 }
 
-.custom-variant-radio__input:checked + .custom-variant-radio__label {
+.custom-variant-radio__input:checked{
   background-color: #000;
 }
 
