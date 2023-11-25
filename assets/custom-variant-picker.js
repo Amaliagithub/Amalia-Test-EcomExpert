@@ -36,3 +36,47 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
     })
 })
 
+document.querySelectorAll("form.product-form").forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+  
+      // Show loading spinner
+      const loadingOverlays = document.querySelectorAll(".loading-overlay");
+      loadingOverlays.forEach((overlay) => overlay.classList.remove("hidden"));
+  
+      // Collect product data
+      const productData = selectedProducts.map((product) => ({
+        id: product.id,
+        quantity: 1,
+        variantId:
+          product.variantId && product.variantId !== product.id
+            ? parseInt(product.variantId)
+            : undefined,
+      }));
+  
+      const requestBody = {
+        items: productData,
+      };
+  
+      // Add products to cart
+      await fetch(`${window.Shopify.routes.root}cart/add.js`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+  
+      // Get updated cart data
+      const res = await fetch("/cart.json");
+      const cart = await res.json();
+  
+      // Update cart count
+      document.querySelectorAll(".cart-count-bubble").forEach((el) => {
+        el.textContent = cart.item_count;
+      });
+  
+      // Navigate to cart page
+      window.location.href = "/cart";
+    });
+  });
