@@ -35,3 +35,7 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
         changeVariant();
     })
 })
+
+document.querySelectorAll("form.product-form").forEach((form) => {
+    console.log( form );
+})
