@@ -51,14 +51,21 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
-      {% assign exist_gift_product = false %}
-      {% for item in cart.items %}
-        {% if item.id == 41390951792692 %}
-          {% assign exist_gift_product = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {{ exist_gift_product }}
+        {% assign gift_product = true %}
+        {% for item in cart.items %}
+          {% if item.id == 41390951792692 %}
+            {% assign gift_product = false %}
+          {% endif %}
+        {% endfor %}
+        {% if product.id == 7182744879156 and gift_product %}
+          <input
+            type="hidden"
+            name="items[0][id]"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            class="product-variant-id"
+          >
+          <input type="hidden" name="items[1][id]" value="41390951792692">
+        {% else %}
           <input
             type="hidden"
             name="id"
@@ -68,6 +75,7 @@
             {% endif %}
             class="product-variant-id"
           >
+        {% endif %}
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}

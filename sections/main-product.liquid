@@ -233,10 +233,17 @@
                       </span>
                       {% render 'icon-minus' %}
                     </button>
+                    {% assign gift_product = true %}
+                    {% for item in cart.items %}
+                      {% if item.id == 41390951792692 %}
+                        {% assign gift_product = false %}
+                      {% endif %}
+                    {% endfor %}
+                    {% if product.id == 7182744879156 and gift_product %}
                     <input
                       class="quantity__input"
                       type="number"
-                      name="quantity"
+                      name="items[0][quantity]"
                       id="Quantity-{{ section.id }}"
                       data-cart-quantity="{{ cart_qty }}"
                       data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
@@ -249,6 +256,30 @@
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
                     />
+                      <input
+                        type="hidden"
+                        name="items[1][quantity]"
+                        value="1"
+                        form="{{ product_form_id }}"
+                      />
+                    {% else %}
+                      <input
+                        class="quantity__input"
+                        type="number"
+                        name="quantity"
+                        id="Quantity-{{ section.id }}"
+                        data-cart-quantity="{{ cart_qty }}"
+                        data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                          data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                          max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                        {% endif %}
+                        step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        form="{{ product_form_id }}"
+                      />
+                    {% endif %}
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
