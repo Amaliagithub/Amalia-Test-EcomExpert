@@ -22,6 +22,7 @@
                 {% comment %} In case variant is Size {% endcomment %}
 
             {% else %}
+                <p>Size</p>
                 <select class="custom-variant-select quantity" data-option-name="{{ option.name }}">
                     <option selected disabled>unselected</option>
                     {% for value in option.values  %}
