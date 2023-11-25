@@ -43,5 +43,5 @@ document.querySelectorAll("form.product-form").forEach((form) => {
 });
 
 document.querySelector(".product-form__buttons").addEventListener('click', () => {
-    alert();
+    console.log(selectedProducts);
 })
