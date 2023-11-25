@@ -54,7 +54,7 @@
           <input
             type="hidden"
             name="id"
-            value="{{ product.selected_or_first_available_variant.id }}"
+            {% comment %} value="{{ product.selected_or_first_available_variant.id }}" {% endcomment %}
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
