@@ -20,6 +20,13 @@
           "settings": {
           }
         },
+        "71833b44-26df-4dab-9019-3a04065a35b9": {
+          "type": "text",
+          "settings": {
+            "text": "Color",
+            "text_style": "body"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -54,6 +61,7 @@
         "vendor",
         "title",
         "price",
+        "71833b44-26df-4dab-9019-3a04065a35b9",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
