@@ -13,13 +13,13 @@ function changeVariant() {
     for( let i = 0; i < variantData.length; i++ ) {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
-    // variantData.forEach((item) => {
-    //     console.log(1);
-    // })
 
-    document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
-    document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
-    document.querySelector(".product-variant-id").value = currentVariant.id;
+    if(currentVariant) {
+        document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
+        document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
+        document.querySelector(".product-variant-id").value = currentVariant.id;
+    }
+
 
 }
 
