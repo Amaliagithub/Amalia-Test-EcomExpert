@@ -6,9 +6,9 @@ class CartRemoveButton extends HTMLElement {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
       cartItems.updateQuantity(this.dataset.index, 0);
-      if(!document.querySelector('[data-product-id="7182744879156"]')) {
+      if(this.closest('tr').getAttribute('data-product-id') == "7182744879156") {
         setTimeout(() => {
-          cartItems.updateQuantity(document.querySelector('[data-product-id="41390951792692"]').dataset.line, 0)
+          if(!document.querySelector('[data-product-id="7182744879156"]')) cartItems.updateQuantity(document.querySelector('[data-product-id="41390951792692"]').dataset.line, 0)
         }, 1500);
       }
     });
