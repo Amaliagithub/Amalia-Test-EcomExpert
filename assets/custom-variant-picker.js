@@ -2,6 +2,7 @@ var variantData = JSON.parse(document.querySelector('.custom-variant-picker').qu
 var currentVariant;
 console.log(variantData);
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
+console.log(sectionId);
 
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
@@ -12,9 +13,8 @@ function changeVariant() {
     for( let i = 0; i < variantData.length; i++ ) {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
-    if(!currentVariant) {
-        alert("Please select product")
-    } else {
+
+    if(currentVariant) {
 
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2);
