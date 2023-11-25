@@ -36,12 +36,3 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
     })
 })
 
-document.querySelectorAll("form.product-form").forEach((form) => {
-    form.addEventListener('submit', async (e) => {
-        alert(1);
-    })
-});
-
-document.querySelector(".product-form__buttons").addEventListener('click', () => {
-    console.log(selectedProducts);
-})
