@@ -7,6 +7,7 @@ if (!customElements.get('product-form')) {
 
         this.form = this.querySelector('form');
         this.form.querySelector('[name=id]').disabled = false;
+        console.log(this.form);
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
         this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
         this.submitButton = this.querySelector('[type="submit"]');
@@ -17,7 +18,6 @@ if (!customElements.get('product-form')) {
       }
 
       onSubmitHandler(evt) {
-        console.log('submit');
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
