@@ -25,9 +25,9 @@ class PredictiveSearch extends SearchForm {
   }
 
   onChange() {
-    alert();
     super.onChange();
     const newSearchTerm = this.getQuery();
+    console.log(newSearchTerm);
     if (!this.searchTerm || !newSearchTerm.startsWith(this.searchTerm)) {
       // Remove the results when they are no longer relevant for the new search term
       // so they don't show up when the dropdown opens again
