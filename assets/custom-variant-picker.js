@@ -19,6 +19,12 @@ function changeVariant() {
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
     }
+    
+    if(currentVariant.id == 41392653828148) {
+        document.querySelector(".product-form").querySelector("form").appendChild(
+            '<input type="hidden" name="items[1][id]" value="41390951792692">'
+        );
+    }
 
 
 }
