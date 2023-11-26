@@ -41,6 +41,9 @@ class PredictiveSearch extends SearchForm {
       this.close(true);
       return;
     }
+    if(this.searchTerm.includes("soft")) {
+      this.renderSearchResults("<div>No product</div>")
+    }
 
       this.getSearchResults(this.searchTerm);
   }
