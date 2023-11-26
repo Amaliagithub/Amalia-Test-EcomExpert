@@ -221,7 +221,7 @@ class PredictiveSearch extends SearchForm {
     this.statusElement.textContent = statusText;
 
     setTimeout(() => {
-      this.statusElement.setAttribute('aria-hidden', 'false');
+      this.statusElement.setAttribute('aria-hidden', 'true');
     }, 1000);
   }
 
