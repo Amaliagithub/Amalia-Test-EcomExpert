@@ -46,7 +46,7 @@
             </li>
           {%- endfor -%}
           {%- for collection in predictive_search.resources.collections -%}
-            <li
+            {% comment %} <li
               id="predictive-search-option-collection-{{ forloop.index }}"
               class="predictive-search__list-item"
               role="option"
@@ -57,7 +57,7 @@
                   <p class="predictive-search__item-heading h5">{{ collection.title }}</p>
                 </div>
               </a>
-            </li>
+            </li> {% endcomment %}
           {%- endfor -%}
         </ul>
       </div>
