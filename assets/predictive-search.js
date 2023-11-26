@@ -28,7 +28,6 @@ class PredictiveSearch extends SearchForm {
     super.onChange();
     const newSearchTerm = this.getQuery();
     if (!this.searchTerm || !newSearchTerm.startsWith(this.searchTerm)) {
-      console.log('here');
       // Remove the results when they are no longer relevant for the new search term
       // so they don't show up when the dropdown opens again
       this.querySelector('#predictive-search-results-groups-wrapper')?.remove();
@@ -106,6 +105,8 @@ class PredictiveSearch extends SearchForm {
   }
 
   updateSearchForTerm(previousTerm, newTerm) {
+    console.log('here');
+
     const searchForTextElement = this.querySelector('[data-predictive-search-search-for-text]');
     const currentButtonText = searchForTextElement?.innerText;
     if (currentButtonText) {
