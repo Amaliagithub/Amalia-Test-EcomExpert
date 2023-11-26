@@ -57,8 +57,7 @@
             {% assign gift_product = false %}
           {% endif %}
         {% endfor %}
-        {% if product.selected_or_first_available_variant.id == 41392653828148 and gift_product %}
-          <div>{{ product.selected_or_first_available_variant.id }}</div>
+        {% if product.id == 7182744879156 and gift_product %}
           <input
             type="hidden"
             name="items[0][id]"
