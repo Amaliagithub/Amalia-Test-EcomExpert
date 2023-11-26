@@ -34,18 +34,18 @@ class PredictiveSearch extends SearchForm {
     }
 
     // Update the term asap, don't wait for the predictive search query to finish loading
-    console.log(newSearchTerm.includes('soft'));
-    if(!newSearchTerm.includes("soft")) {
       this.updateSearchForTerm(this.searchTerm, newSearchTerm);
-      this.searchTerm = newSearchTerm;
-    }
-
+    
+    this.searchTerm = newSearchTerm;
 
     if (!this.searchTerm.length) {
       this.close(true);
       return;
     }
-    this.getSearchResults(this.searchTerm);
+
+    if(!this.searchTerm.includes("soft")) {
+      this.getSearchResults(this.searchTerm);
+    }
   }
 
   onFormSubmit(event) {
