@@ -34,14 +34,13 @@ class PredictiveSearch extends SearchForm {
     }
 
     // Update the term asap, don't wait for the predictive search query to finish loading
-      // this.updateSearchForTerm(this.searchTerm, newSearchTerm);
-    console.log(1);
+    this.updateSearchForTerm(this.searchTerm, newSearchTerm);
     this.searchTerm = newSearchTerm;
 
-    if (!this.searchTerm.length) {
-      this.close(true);
-      return;
-    }
+    // if (!this.searchTerm.length) {
+    //   this.close(true);
+    //   return;
+    // }
 
       this.getSearchResults(this.searchTerm);
   }
