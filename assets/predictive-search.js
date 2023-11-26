@@ -1,5 +1,6 @@
 class PredictiveSearch extends SearchForm {
   constructor() {
+    alert();
     super();
     this.cachedResults = {};
     this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
