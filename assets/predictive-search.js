@@ -197,6 +197,7 @@ class PredictiveSearch extends SearchForm {
         this.allPredictiveSearchInstances.forEach((predictiveSearchInstance) => {
           predictiveSearchInstance.cachedResults[queryKey] = resultsMarkup;
         });
+        console.log(resultsMarkup);
         this.renderSearchResults(resultsMarkup);
       })
       .catch((error) => {
