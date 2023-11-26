@@ -21,6 +21,8 @@ function changeVariant() {
     }
 
     if(currentVariant.id == 41392653828148) {
+        document.querySelector(".product-form").querySelector("form").querySelector("input:value=[41392653828148]");
+
         alert();
         const node = document.createElement("input");
         node.type="hidden";
