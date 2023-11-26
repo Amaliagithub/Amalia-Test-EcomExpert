@@ -46,6 +46,7 @@
             </li>
           {%- endfor -%}
           {%- for collection in predictive_search.resources.collections -%}
+            <div>{{ collection }}</div>
             <li
               id="predictive-search-option-collection-{{ forloop.index }}"
               class="predictive-search__list-item"
