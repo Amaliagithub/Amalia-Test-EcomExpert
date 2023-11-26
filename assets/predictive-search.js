@@ -34,6 +34,7 @@ class PredictiveSearch extends SearchForm {
     }
 
     // Update the term asap, don't wait for the predictive search query to finish loading
+    console.log(newSearchTerm.includes('soft'));
     if(!newSearchTerm.includes("soft")) {
       this.updateSearchForTerm(this.searchTerm, newSearchTerm);
     }
