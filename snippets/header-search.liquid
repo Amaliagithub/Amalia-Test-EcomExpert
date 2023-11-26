@@ -81,6 +81,7 @@
           </div>
 
           {%- if settings.predictive_search_enabled -%}
+            <div>{{ settings.predictive_search_enabled }}</div>
             <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
               {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
             </div>
