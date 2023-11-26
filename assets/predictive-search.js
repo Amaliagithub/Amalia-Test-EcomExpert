@@ -25,6 +25,7 @@ class PredictiveSearch extends SearchForm {
   }
 
   onChange() {
+    alert();
     super.onChange();
     const newSearchTerm = this.getQuery();
     if (!this.searchTerm || !newSearchTerm.startsWith(this.searchTerm)) {
