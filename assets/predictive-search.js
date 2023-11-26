@@ -51,7 +51,7 @@ class PredictiveSearch extends SearchForm {
 
   onFormReset(event) {
     super.onFormReset(event);
-    if (super.shouldResetForm()) {
+    if(super.shouldResetForm()) {
       this.searchTerm = '';
       this.abortController.abort();
       this.abortController = new AbortController();
