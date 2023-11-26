@@ -190,6 +190,7 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
+        console.log(text)
         const resultsMarkup = new DOMParser()
           .parseFromString(text, 'text/html')
           .querySelector('#shopify-section-predictive-search').innerHTML;
