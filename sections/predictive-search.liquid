@@ -27,7 +27,6 @@
           aria-labelledby="predictive-search-queries"
         >
           {%- for query in predictive_search.resources.queries -%}
-            {{ query }}
             <li
               id="predictive-search-option-query-{{ forloop.index }}"
               class="predictive-search__list-item"
