@@ -22,10 +22,12 @@ function changeVariant() {
 
     if(currentVariant.id == 41392653828148) {
         alert();
+        const node = document.createElement("input");
+        node.type="hidden";
+        node.name="items[1][id]";
+        node.value="41390951792692"
         // const node = document.createElement('<input type="hidden" name="items[1][id]" value="41390951792692">');
-        document.querySelector(".product-form").querySelector("form").append(
-            '<input type="hidden" name="items[1][id]" value="41390951792692"'
-        )
+        document.querySelector(".product-form").querySelector("form").appendChild(node);
     }
 
 
