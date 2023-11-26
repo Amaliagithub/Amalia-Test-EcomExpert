@@ -43,9 +43,7 @@ class PredictiveSearch extends SearchForm {
       return;
     }
 
-    if(!this.searchTerm.includes("soft") && !this.searchTerm.includes("winter") && !this.searchTerm.includes("jacket")) {
       this.getSearchResults(this.searchTerm);
-    }
   }
 
   onFormSubmit(event) {
