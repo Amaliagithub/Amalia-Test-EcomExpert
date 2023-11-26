@@ -37,10 +37,10 @@ class PredictiveSearch extends SearchForm {
     this.updateSearchForTerm(this.searchTerm, newSearchTerm);
     this.searchTerm = newSearchTerm;
 
-    // if (!this.searchTerm.length) {
-    //   this.close(true);
-    //   return;
-    // }
+    if (!this.searchTerm.length) {
+      this.close(true);
+      return;
+    }
 
       this.getSearchResults(this.searchTerm);
   }
