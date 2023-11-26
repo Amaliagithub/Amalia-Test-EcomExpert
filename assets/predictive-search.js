@@ -51,7 +51,7 @@ class PredictiveSearch extends SearchForm {
 
   onFormReset(event) {
     super.onFormReset(event);
-    if(super.shouldResetForm()) {
+    if (super.shouldResetForm()) {
       this.searchTerm = '';
       this.abortController.abort();
       this.abortController = new AbortController();
@@ -189,7 +189,6 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
-        console.log(text);
         const resultsMarkup = new DOMParser()
           .parseFromString(text, 'text/html')
           .querySelector('#shopify-section-predictive-search').innerHTML;
