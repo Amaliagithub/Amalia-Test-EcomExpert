@@ -3,6 +3,7 @@ class MainSearch extends SearchForm {
     super();
     this.allSearchInputs = document.querySelectorAll('input[type="search"]');
     this.setupEventListeners();
+    document.querySelector("#title--7182744813620").closest("li").remove();
   }
 
   setupEventListeners() {
