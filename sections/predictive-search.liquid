@@ -221,7 +221,7 @@
 
     {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
 
-    <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
+    {% comment %} <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
       <button
         class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow"
         tabindex="-1"
@@ -233,7 +233,7 @@
         </span>
         {% render 'icon-arrow' %}
       </button>
-    </div>
+    </div> {% endcomment %}
   </div>
 
   <span class="hidden" data-predictive-search-live-region-count-value>
