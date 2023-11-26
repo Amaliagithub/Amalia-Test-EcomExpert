@@ -181,7 +181,6 @@ class PredictiveSearch extends SearchForm {
       signal: this.abortController.signal,
     })
       .then((response) => {
-        console.log(response);
         if (!response.ok) {
           var error = new Error(response.status);
           this.close();
