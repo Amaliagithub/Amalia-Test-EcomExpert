@@ -1,6 +1,6 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 console.log(variantData);
-document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
+console.log(document.querySelector(`#ProductSubmitButton-${sectionId}`));
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
