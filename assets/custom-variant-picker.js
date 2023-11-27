@@ -19,7 +19,6 @@ function changeVariant() {
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
-        document.querySelector(`#ProductSubmitButton-${sectionId}`).removeAttribute("disabled");
         
     }
     
@@ -32,8 +31,8 @@ function changeVariant() {
     } else {
         document.querySelector("input[value='41390951792692']").remove();
     }
-    
-
+    if(color && size != 'unselected') document.querySelector('.product-form__submit button').removeAttribute('disabled');
+    else document.querySelector('.product-form__submit button').setAttribute('disabled', 'disabled');
 }
 
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
