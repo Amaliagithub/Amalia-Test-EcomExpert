@@ -80,7 +80,7 @@
               <tbody>
                 {%- for item in cart.items -%}
                   <p>{{ item.id }}</p>
-                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}" data-product-id="{{ item.product.id }}" data-line="{{ forloop.index }}">
+                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}" variant-id="{{ item.id }}" data-product-id="{{ item.product.id }}" data-line="{{ forloop.index }}">
                     <td class="cart-item__media">
                       {% if item.image %}
                         {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
