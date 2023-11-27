@@ -20,15 +20,15 @@ function changeVariant() {
         document.querySelector(".product-variant-id").value = currentVariant.id;
         document.querySelector(`#ProductSubmitButton-${sectionId}`).removeAttribute("disabled");
 
-        if(currentVariant.id == 41392653828148) {
-            const node = document.createElement("input");
-            node.type="hidden";
-            node.name="items[1][id]";
-            node.value="41390951792692"
-            document.querySelector(".product-form").querySelector("form").appendChild(node);
-        }
     }
-
+    
+    if(currentVariant.id == 41392653828148) {
+        const node = document.createElement("input");
+        node.type="hidden";
+        node.name="items[1][id]";
+        node.value="41390951792692"
+        document.querySelector(".product-form").querySelector("form").appendChild(node);
+    }
 
 
 }
