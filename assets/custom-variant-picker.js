@@ -15,7 +15,7 @@ function changeVariant() {
     }
 
     if(currentVariant) {
-        
+        console.log(document.querySelector("input[value='41390951792692']"));
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
