@@ -189,6 +189,33 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
+        if(text.includes("soft")) {
+          const dom = `<div id="predictive-search-results" role="listbox">
+
+          <link href="//cdn.shopify.com/s/files/1/0621/5371/9860/t/3/assets/component-loading-spinner.css?v=116724955567955766481700846688" rel="stylesheet" type="text/css" media="all">
+          
+          <div class="predictive-search__loading-state">
+            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+          <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
+                <button class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow" tabindex="-1" role="option" aria-selected="false">
+                  <span data-predictive-search-search-for-text="">Search for “${searchTerm}”</span>
+                  <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor">
+          </path></svg>
+          
+                </button>
+              </div>
+            </div>
+          
+            <span class="hidden" data-predictive-search-live-region-count-value="">
+              No results found for “asdfsdafsadf”. Check the spelling or use a different word or phrase.
+            </span>`
+            this.renderSearchResults(dom);
+            return;
+        }
         const resultsMarkup = new DOMParser()
           .parseFromString(text, 'text/html')
           .querySelector('#shopify-section-predictive-search').innerHTML;
@@ -196,7 +223,6 @@ class PredictiveSearch extends SearchForm {
         this.allPredictiveSearchInstances.forEach((predictiveSearchInstance) => {
           predictiveSearchInstance.cachedResults[queryKey] = resultsMarkup;
         });
-        console.log(resultsMarkup);
         this.renderSearchResults(resultsMarkup);
       })
       .catch((error) => {
