@@ -1,6 +1,6 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 var isGiftProduct = false;
-isGiftProduct();
+checkGiftProduct();
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -59,7 +59,7 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
 
-function isGiftProduct() {
+function checkGiftProduct() {
     fetch('/cart.js')
     .then((response) => response.text())
     .then((responseText) => {
