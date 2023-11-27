@@ -9,6 +9,7 @@ function changeVariant() {
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
     
     const variantTitle  = color + ' / ' + size;
+    console.log(variantTitle);
     
     for( let i = 0; i < variantData.length; i++ ) {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
