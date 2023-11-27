@@ -23,7 +23,6 @@ function changeVariant() {
     }
 
     if(currentVariant.id == 41392653828148) {
-        alert();
         const node = document.createElement("input");
         node.type="hidden";
         node.name="items[1][id]";
