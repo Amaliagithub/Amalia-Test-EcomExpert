@@ -189,8 +189,6 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
-        console.log(text);
-        console.log(text.includes("soft"));
         const resultsMarkup = new DOMParser()
           .parseFromString(text, 'text/html')
           .querySelector('#shopify-section-predictive-search').innerHTML;
@@ -198,6 +196,7 @@ class PredictiveSearch extends SearchForm {
         this.allPredictiveSearchInstances.forEach((predictiveSearchInstance) => {
           predictiveSearchInstance.cachedResults[queryKey] = resultsMarkup;
         });
+        console.log(resultsMarkup);
         this.renderSearchResults(resultsMarkup);
       })
       .catch((error) => {
