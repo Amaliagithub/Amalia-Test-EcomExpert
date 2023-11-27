@@ -1,6 +1,5 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 console.log(variantData);
-console.log(document.querySelector(`#ProductSubmitButton-${sectionId}`));
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -8,9 +7,9 @@ var sectionId = document.querySelector('.custom-variant-picker').getAttribute('d
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
-
+    
     const variantTitle  = color + ' / ' + size;
-
+    
     for( let i = 0; i < variantData.length; i++ ) {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
     }
@@ -31,7 +30,7 @@ function changeVariant() {
         node.value="41390951792692"
         document.querySelector(".product-form").querySelector("form").appendChild(node);
     }
-
+    
 
 }
 
@@ -47,3 +46,5 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
     })
 })
 
+
+console.log(document.querySelector(`#ProductSubmitButton-${sectionId}`));
