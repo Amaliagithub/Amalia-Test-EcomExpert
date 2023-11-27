@@ -2,10 +2,10 @@ class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
 
-    console.log(cartItems);
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+      console.log(cartItems);
       cartItems.updateQuantity(this.dataset.index, 0);
       if(this.closest('tr').getAttribute('data-product-id') == "7182744879156") {
         setTimeout(() => {
