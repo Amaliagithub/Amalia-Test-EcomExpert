@@ -7,6 +7,7 @@ var sectionId = document.querySelector('.custom-variant-picker').getAttribute('d
 function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
+    document.querySelector("input[value='41390951792692']").remove();
     
     const variantTitle  = color + ' / ' + size;
     
