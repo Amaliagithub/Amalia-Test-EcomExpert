@@ -1,5 +1,5 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-console.log(variantData);
+var isGiftProduct = isGiftProduct();
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -22,7 +22,7 @@ function changeVariant() {
         
     }
     
-    if(currentVariant.id == 41392653828148) {
+    if(currentVariant.id == 41392653828148 && !isGiftProduct) {
         var form = document.querySelector('[data-type="add-to-cart-form"]');
 
         const giftId = document.createElement("input");
@@ -58,11 +58,17 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
 
-fetch('/cart.js')
-.then((response) => response.text())
-.then((responseText) => {
-    console.log(JSON.parse(responseText));
-})
-.catch((e) => {
-    console.error(e);
-});
+function isGiftProduct() {
+    fetch('/cart.js')
+    .then((response) => response.text())
+    .then((responseText) => {
+        let items = JSON.parse(responseText).items;
+        for(var i=0;i<items.length;i++) {
+            if(items[i].id == 41390951792692) return true;
+        }
+        return false;
+    })
+    .catch((e) => {
+        console.error(e);
+    });
+}
