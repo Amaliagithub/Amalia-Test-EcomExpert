@@ -3,8 +3,7 @@ console.log(variantData);
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
-function changeVariant(event) {
-    console.log(event.currentTarget);
+function changeVariant() {
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
 
@@ -34,7 +33,7 @@ function changeVariant(event) {
 
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
     e.preventDefault();
-    changeVariant(e);
+    changeVariant();
 });
 
 document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
