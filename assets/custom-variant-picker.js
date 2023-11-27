@@ -34,7 +34,7 @@ function changeVariant(event) {
 
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
     e.preventDefault();
-    changeVariant();
+    changeVariant(e);
 });
 
 document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
