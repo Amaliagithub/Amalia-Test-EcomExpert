@@ -5,13 +5,14 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      if(this.closest('tr').getAttribute('variant-id') == "41390951792692") {
-        cartItems.updateQuantity(this.dataset.index, 0);
-        setTimeout(() => {
-          cartItems.updateQuantity(document.querySelector('[data-product-id="7182744813620"]').dataset.line, 0)
-        }, 750);
-      }   
-      cartItems.updateQuantity(this.dataset.index, 0);
+      console.log(this.closest('tr'))
+      // if(this.closest('tr').getAttribute('variant-id') == "41390951792692") {
+      //   cartItems.updateQuantity(this.dataset.index, 0);
+      //   setTimeout(() => {
+      //     cartItems.updateQuantity(document.querySelector('[data-product-id="7182744813620"]').dataset.line, 0)
+      //   }, 750);
+      // }   
+      // cartItems.updateQuantity(this.dataset.index, 0);
 
     });
   }
