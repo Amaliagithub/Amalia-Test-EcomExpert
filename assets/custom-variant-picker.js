@@ -23,13 +23,22 @@ function changeVariant() {
     }
     
     if(currentVariant.id == 41392653828148) {
-        const node = document.createElement("input");
-        node.type="hidden";
-        node.name="items[1][id]";
-        node.value="41390951792692"
-        document.querySelector(".product-form").querySelector("form").appendChild(node);
+        var form = document.querySelector('[data-type="add-to-cart-form"]');
+
+        const giftId = document.createElement("input");
+        giftId.type="hidden";
+        giftId.name="items[1][id]";
+        giftId.value="41390951792692";
+        const giftQuantity = document.createElement("input");
+        giftQuantity.type="hidden";
+        giftQuantity.name="items[1][quantity]";
+        giftQuantity.value="1";
+        giftQuantity.form = form.getAttribute('id');
+        form.appendChild(giftId);
+        document.querySelector('quantity-input').appendChild(giftQuantity);
     } else {
-        document.querySelector("input[value='41390951792692']").remove();
+        if(document.querySelector('name="items[1][id]"')) document.querySelector('name="items[1][id]"').remove();
+        if(document.querySelector('name="items[1][quantity]"')) document.querySelector('name="items[1][quantity]"').remove();
     }
     if(color && size != 'unselected') document.querySelector('.product-form__submit button').removeAttribute('disabled');
 }
