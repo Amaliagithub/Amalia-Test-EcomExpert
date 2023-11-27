@@ -22,7 +22,7 @@ function changeVariant() {
         document.querySelector(".product-variant-id").value = currentVariant.id;
         
     }
-    
+    console.log(isGiftProduct);
     if(currentVariant.id == 41392653828148 && !isGiftProduct) {
         var form = document.querySelector('[data-type="add-to-cart-form"]');
 
