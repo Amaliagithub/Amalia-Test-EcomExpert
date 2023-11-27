@@ -3,8 +3,7 @@ console.log(variantData);
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
-function changeVariant() {
-
+function changeVariant(e) {
 
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
