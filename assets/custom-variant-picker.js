@@ -32,7 +32,6 @@ function changeVariant() {
         document.querySelector("input[value='41390951792692']").remove();
     }
     if(color && size != 'unselected') document.querySelector('.product-form__submit button').removeAttribute('disabled');
-    else document.querySelector('.product-form__submit button').setAttribute('disabled', 'disabled');
 }
 
 document.querySelector('.custom-variant-select').addEventListener('change', function(e){
