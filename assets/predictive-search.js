@@ -189,7 +189,7 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
-        if(text.includes("soft")) {
+        if(text.toLowerCase.includes("soft") && text.toLowerCase.includes("winter")) {
           const dom = `<div id="predictive-search-results" role="listbox">
 
           <link href="//cdn.shopify.com/s/files/1/0621/5371/9860/t/3/assets/component-loading-spinner.css?v=116724955567955766481700846688" rel="stylesheet" type="text/css" media="all">
