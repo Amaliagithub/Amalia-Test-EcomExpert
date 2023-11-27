@@ -47,4 +47,4 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 })
 
 
-console.log(document.querySelector(`#ProductSubmitButton-${sectionId}`)).setAttribute("disabled", true);
+document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
