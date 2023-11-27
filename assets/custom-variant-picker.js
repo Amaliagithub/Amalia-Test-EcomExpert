@@ -65,7 +65,6 @@ function checkGiftProduct() {
     .then((responseText) => {
         let items = JSON.parse(responseText).items;
         for(var i=0;i<items.length;i++) {
-            console.log(items[i]);
             if(items[i].id == 41390951792692) isGiftProduct = true;
         }
     })
