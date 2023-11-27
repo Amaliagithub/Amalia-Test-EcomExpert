@@ -189,6 +189,7 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
+        console.log(text);
         console.log(text.includes("soft"));
         const resultsMarkup = new DOMParser()
           .parseFromString(text, 'text/html')
