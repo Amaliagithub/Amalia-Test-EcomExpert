@@ -37,8 +37,8 @@ function changeVariant() {
         form.appendChild(giftId);
         document.querySelector('quantity-input').appendChild(giftQuantity);
     } else {
-        if(document.querySelector('name="items[1][id]"')) document.querySelector('name="items[1][id]"').remove();
-        if(document.querySelector('name="items[1][quantity]"')) document.querySelector('name="items[1][quantity]"').remove();
+        if(document.querySelector('[name="items[1][id]"]')) document.querySelector('[name="items[1][id]"]').remove();
+        if(document.querySelector('[name="items[1][quantity]"]')) document.querySelector('[name="items[1][quantity]"]').remove();
     }
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
 }
