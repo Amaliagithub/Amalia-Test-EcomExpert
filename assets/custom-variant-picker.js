@@ -1,5 +1,6 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-var isGiftProduct = isGiftProduct();
+var isGiftProduct = false;
+isGiftProduct();
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -64,9 +65,8 @@ function isGiftProduct() {
     .then((responseText) => {
         let items = JSON.parse(responseText).items;
         for(var i=0;i<items.length;i++) {
-            if(items[i].id == 41390951792692) return true;
+            if(items[i].id == 41390951792692) isGiftProduct = true;
         }
-        return false;
     })
     .catch((e) => {
         console.error(e);
