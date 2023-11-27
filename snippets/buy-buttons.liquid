@@ -54,7 +54,7 @@
         
           <input
             type="hidden"
-            name="items[id]"
+            name="items[0][id]"
             value="{{ product.selected_or_first_available_variant.id }}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
