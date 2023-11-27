@@ -9,7 +9,7 @@ class CartRemoveButton extends HTMLElement {
       if(!this.closest('tr').getAttribute('variant-id') == "41390951792692") {
         setTimeout(() => {
           cartItems.updateQuantity(document.querySelector('[data-product-id="7182744813620"]').dataset.line, 0)
-        }, 750);
+        }, 1500);
       }
     });
   }
