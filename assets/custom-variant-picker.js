@@ -59,8 +59,9 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
 
 fetch('/cart.js')
-.then((response) => {
-    console.log(response);
+.then((response) => response.text())
+.then((responseText) => {
+    console.log(responseText);
 })
 .catch((e) => {
     console.error(e);
