@@ -15,11 +15,11 @@ function changeVariant() {
     }
 
     if(currentVariant) {
-        document.querySelector("input[value='41390951792692']").remove();
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
         document.querySelector(`#ProductSubmitButton-${sectionId}`).removeAttribute("disabled");
+        document.querySelector("input[value='41390951792692']").remove();
         
     }
     
