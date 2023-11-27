@@ -18,15 +18,16 @@ function changeVariant() {
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
+        
+        if(currentVariant.id == 41392653828148) {
+            const node = document.createElement("input");
+            node.type="hidden";
+            node.name="items[1][id]";
+            node.value="41390951792692"
+            document.querySelector(".product-form").querySelector("form").appendChild(node);
+        }
     }
 
-    if(currentVariant.id == 41392653828148) {
-        const node = document.createElement("input");
-        node.type="hidden";
-        node.name="items[1][id]";
-        node.value="41390951792692"
-        document.querySelector(".product-form").querySelector("form").appendChild(node);
-    }
 
 
 }
