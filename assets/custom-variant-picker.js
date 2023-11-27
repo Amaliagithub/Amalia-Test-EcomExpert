@@ -19,7 +19,6 @@ function changeVariant() {
         document.querySelector('.price-item--regular').textContent = '$' + ( currentVariant.price / 100 ).toFixed(2) + 'CAD';
         document.querySelector(".product-variant-id").value = currentVariant.id;
         document.querySelector(`#ProductSubmitButton-${sectionId}`).removeAttribute("disabled");
-        document.querySelector("input[value='41390951792692']").remove();
         
     }
     
@@ -29,6 +28,9 @@ function changeVariant() {
         node.name="items[1][id]";
         node.value="41390951792692"
         document.querySelector(".product-form").querySelector("form").appendChild(node);
+    } else {
+        
+        document.querySelector("input[value='41390951792692']").remove();
     }
     
 
