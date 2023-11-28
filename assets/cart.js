@@ -5,6 +5,9 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+
+      // Deleting soft winter jacket automatically if there is not Black-Medium 
+      
       if(this.closest('tr').getAttribute('variant-id') == 41392653828148) {
         cartItems.updateQuantity(this.dataset.index, 0);
         setTimeout(() => {
