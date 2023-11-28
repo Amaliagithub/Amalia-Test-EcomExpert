@@ -1,6 +1,5 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 console.log(variantData);
-var isExist  = false;
 var isGiftProduct = false;
 checkGiftProduct();
 
