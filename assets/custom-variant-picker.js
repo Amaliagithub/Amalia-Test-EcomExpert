@@ -23,7 +23,6 @@ function changeVariant() {
         document.querySelector(".product-variant-id").value = currentVariant.id;
     }
     
-    console.log(color, size);
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
     if(currentVariant.id == 41392653828148 && !isGiftProduct) {
         const node = document.createElement("input");
