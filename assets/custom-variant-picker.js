@@ -1,4 +1,7 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
+var isGiftProduct = false;
+checkGiftProduct();
+
 console.log(variantData);
 
 var currentVariant;
@@ -22,7 +25,7 @@ function changeVariant() {
         
     }
     
-    if(currentVariant.id == 41392653828148) {
+    if(currentVariant.id == 41392653828148 && !isGiftProduct) {
         
     }
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
@@ -43,3 +46,16 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
 
+function checkGiftProduct() {
+    fetch('/cart.js')
+    .then((response) => response.text())
+    .then((responseText) => {
+        let items = JSON.parse(responseText).items;
+        for(var i=0;i<items.length;i++) {
+            if(items[i].id == 41390951792692) isGiftProduct = true;
+        }
+    })
+    .catch((e) => {
+        console.error(e);
+    });
+}
