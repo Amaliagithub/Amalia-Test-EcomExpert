@@ -12,7 +12,7 @@ function changeVariant() {
     
     for( let i = 0; i < variantData.length; i++ ) {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
-        if(size == 'unselected' && variantData[i].title.indexOf(color) > -1) currentVariant = variantData[i];
+        // if(size == 'unselected' && variantData[i].title.indexOf(color) > -1) currentVariant = variantData[i];
     }
 
     if(currentVariant) {
