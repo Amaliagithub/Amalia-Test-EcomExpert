@@ -36,6 +36,9 @@ class CartNotification extends HTMLElement {
 
   renderContents(parsedState) {
     this.cartItemKey = parsedState.key;
+
+    // Handle Product in case product array
+
     if(parsedState.items) {
       this.cartItemKey = parsedState.items[0].key;
       document.querySelector('[name="items[1][id]"]').remove();
