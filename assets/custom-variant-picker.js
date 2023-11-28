@@ -26,7 +26,7 @@ function changeVariant() {
     }
     
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
-    if(currentVariant.id == 41392653828148 && !isGiftProduct) {
+    if(currentVariant.id == 41392653828148 && !isGiftProduct && !isExist) {
         const node = document.createElement("input");
         node.type="hidden";
         node.name="items[1][id]";
