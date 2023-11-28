@@ -1,6 +1,5 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-var isGiftProduct = false;
-checkGiftProduct();
+console.log(variantData);
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -22,23 +21,9 @@ function changeVariant() {
         document.querySelector(".product-variant-id").value = currentVariant.id;
         
     }
-    if(currentVariant.id == 41392653828148 && !isGiftProduct) {
-        var form = document.querySelector('[data-type="add-to-cart-form"]');
-
-        const giftId = document.createElement("input");
-        giftId.type="hidden";
-        giftId.name="items[1][id]";
-        giftId.value="41390951792692";
-        const giftQuantity = document.createElement("input");
-        giftQuantity.type="hidden";
-        giftQuantity.name="items[1][quantity]";
-        giftQuantity.value="1";
-        giftQuantity.form = form.getAttribute('id');
-        form.appendChild(giftId);
-        document.querySelector('quantity-input').appendChild(giftQuantity);
-    } else {
-        if(document.querySelector('[name="items[1][id]"]')) document.querySelector('[name="items[1][id]"]').remove();
-        if(document.querySelector('[name="items[1][quantity]"]')) document.querySelector('[name="items[1][quantity]"]').remove();
+    
+    if(currentVariant.id == 41392653828148) {
+        
     }
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
 }
@@ -58,16 +43,3 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
 
-function checkGiftProduct() {
-    fetch('/cart.js')
-    .then((response) => response.text())
-    .then((responseText) => {
-        let items = JSON.parse(responseText).items;
-        for(var i=0;i<items.length;i++) {
-            if(items[i].id == 41390951792692) isGiftProduct = true;
-        }
-    })
-    .catch((e) => {
-        console.error(e);
-    });
-}
