@@ -1,5 +1,5 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
-console.log(variantData);
+
 var isGiftProduct = false;
 checkGiftProduct();
 
@@ -7,7 +7,7 @@ var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
 
 function changeVariant() {
-    console.log(isExist);
+    
     const size = document.querySelector('.custom-variant-select').value;
     const color = document.querySelector('.custom-variant-radio__input:checked').value;
     
@@ -17,7 +17,6 @@ function changeVariant() {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
         if(size == 'unselected' && variantData[i].title.indexOf(color) > -1) currentVariant = variantData[i];
     }
-    console.log(currentVariant);
 
     if(currentVariant) {
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
@@ -26,6 +25,7 @@ function changeVariant() {
     }
     
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
+    
     if(currentVariant.id == 41392653828148 && !isGiftProduct && !isExist) {
         const node = document.createElement("input");
         node.type="hidden";
