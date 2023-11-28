@@ -33,7 +33,7 @@ function changeVariant() {
         document.querySelector("input[value='41390951792692']").remove();
     }
 
-    if(color && size != 'unselected') document.querySelector('.product-form__submit').setAttribute('disabled', false);
+    if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
     console.log('here');
 
 }
