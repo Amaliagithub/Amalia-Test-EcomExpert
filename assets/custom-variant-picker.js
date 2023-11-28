@@ -51,7 +51,7 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 })
 
 
-document.querySelector('.product-form__submit').setAttribute('disabled');
+document.querySelector('.product-form__submit').setAttribute('disabled',true);
 
 function checkGiftProduct() {
     fetch('/cart.js')
