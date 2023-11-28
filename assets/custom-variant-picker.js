@@ -32,6 +32,7 @@ function changeVariant() {
     } else {
         document.querySelector("input[value='41390951792692']").remove();
     }
+
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
     
 
@@ -50,7 +51,7 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 })
 
 
-document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
+document.querySelector('.product-form__submit').setAttribute('disabled');
 
 function checkGiftProduct() {
     fetch('/cart.js')
