@@ -34,7 +34,7 @@ function changeVariant() {
     }
 
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
-    
+    console.log('here');
 
 }
 
