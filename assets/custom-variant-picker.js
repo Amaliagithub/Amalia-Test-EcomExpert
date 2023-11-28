@@ -25,7 +25,7 @@ function changeVariant() {
     }
     
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
-    
+
     if(currentVariant.id == 41392653828148 && !isGiftProduct && !isExist) {
         const node = document.createElement("input");
         node.type="hidden";
@@ -52,6 +52,8 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 
 document.querySelector('.product-form__submit').setAttribute('disabled',true);
+
+// Checking if there is soft winter jack
 
 function checkGiftProduct() {
     fetch('/cart.js')
