@@ -23,6 +23,8 @@ function changeVariant() {
         document.querySelector(".product-variant-id").value = currentVariant.id;
     }
     
+    console.log(color, size);
+    if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
     if(currentVariant.id == 41392653828148 && !isGiftProduct) {
         const node = document.createElement("input");
         node.type="hidden";
@@ -32,9 +34,6 @@ function changeVariant() {
     } else {
         document.querySelector("input[value='41390951792692']").remove();
     }
-    console.log(color, size);
-    // if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
-    // console.log('here');
 
 }
 
