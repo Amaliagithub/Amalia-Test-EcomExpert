@@ -1,6 +1,6 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 console.log(variantData);
-var isExist  = 123;
+var isExist  = false;
 var isGiftProduct = false;
 checkGiftProduct();
 
@@ -25,7 +25,7 @@ function changeVariant() {
     }
     
     if(color && size != 'unselected') document.querySelector('.product-form__submit').removeAttribute('disabled');
-    if(currentVariant.id == 41392653828148 && !isGiftProduct) {
+    if(currentVariant.id == 41392653828148 && !isGiftProduct && !isExist) {
         const node = document.createElement("input");
         node.type="hidden";
         node.name="items[1][id]";
