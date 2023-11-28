@@ -1,5 +1,7 @@
 var variantData = JSON.parse(document.querySelector('.custom-variant-picker').querySelector('[type="application/json"]').textContent);
 console.log(variantData);
+var isGiftProduct = false;
+checkGiftProduct();
 
 var currentVariant;
 var sectionId = document.querySelector('.custom-variant-picker').getAttribute('data-section-id');
@@ -49,3 +51,17 @@ document.querySelectorAll('.custom-variant-radio').forEach((radio) => {
 
 
 document.querySelector(`#ProductSubmitButton-${sectionId}`).setAttribute("disabled", true);
+
+function checkGiftProduct() {
+    fetch('/cart.js')
+    .then((response) => response.text())
+    .then((responseText) => {
+        let items = JSON.parse(responseText).items;
+        for(var i=0;i<items.length;i++) {
+            if(items[i].id == 41390951792692) isGiftProduct = true;
+        }
+    })
+    .catch((e) => {
+        console.error(e);
+    });
+}
