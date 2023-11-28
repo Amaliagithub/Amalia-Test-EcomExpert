@@ -15,6 +15,7 @@ function changeVariant() {
         if( variantData[i].title == variantTitle ) currentVariant = variantData[i];
         if(size == 'unselected' && variantData[i].title.indexOf(color) > -1) currentVariant = variantData[i];
     }
+    console.log(currentVariant);
 
     if(currentVariant) {
         document.querySelector(`[data-target="${sectionId}-${currentVariant.featured_media.id}"]`).querySelector('button').click();
