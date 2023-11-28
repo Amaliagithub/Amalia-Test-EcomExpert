@@ -4,7 +4,7 @@ if (!customElements.get('product-form')) {
     class ProductForm extends HTMLElement {
       constructor() {
         super();
-
+        console.log(isExist);
         this.form = this.querySelector('form');
         if(this.form.querySelector('[name=id]')) this.form.querySelector('[name=id]').disabled = false;
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
