@@ -50,7 +50,7 @@ if (!customElements.get('product-form')) {
                 message: response.message,
               });
               this.handleErrorMessage(response.description);
-
+              isExist = true;
               const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
               if (!soldOutMessage) return;
               this.submitButton.setAttribute('aria-disabled', true);
