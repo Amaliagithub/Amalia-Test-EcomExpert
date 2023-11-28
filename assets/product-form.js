@@ -1,4 +1,3 @@
-let isExist = false
 if (!customElements.get('product-form')) {
   customElements.define(
     'product-form',
