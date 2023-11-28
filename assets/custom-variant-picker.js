@@ -32,7 +32,7 @@ function changeVariant() {
         node.value="41390951792692"
         document.querySelector(".product-form").querySelector("form").appendChild(node);
     } else {
-        document.querySelector("input[value='41390951792692']").remove();
+        if(ocument.querySelector("input[value='41390951792692']")) document.querySelector("input[value='41390951792692']").remove();
     }
 
 }
